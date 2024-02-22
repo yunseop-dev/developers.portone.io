@@ -6,6 +6,7 @@ import vercel from "@astrojs/vercel/serverless";
 import unocss from "unocss/astro";
 import yaml from "@rollup/plugin-yaml";
 import rehypeShiki, { type RehypeShikiOptions } from "@shikijs/rehype";
+import { transformerTwoslash } from "@shikijs/twoslash";
 import { transformerMetaHighlight } from "@shikijs/transformers";
 import contentIndex from "./src/content-index";
 
@@ -37,6 +38,7 @@ export default defineConfig({
         {
           theme: "github-light",
           transformers: [
+            transformerTwoslash({ explicitTrigger: true }),
             {
               name: "remove-trailing-newline",
               preprocess(code) {
