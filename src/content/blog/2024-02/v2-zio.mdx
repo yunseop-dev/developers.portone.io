@@ -180,7 +180,7 @@ val validated: Either[Error, (Store.Id, Payment.Id)] =
 Scala는 소스의 [AST(Abstract Syntax Tree)][ast]에 접근하고, 수정하고, 새로운 AST를 만들어낼 수 있는 강력한 매크로 기능을 지원합니다.
 매크로를 적절히 이용하면 여러 곳에서 기계적이고 반복적으로 작성해야만 하는 코드의 양을 획기적으로 줄일 수 있고, 이를 통해 개발 생산성의 향상을 도모할 수 있습니다.
 
-포트원에서는 마이크로서비스들 간의 통신에서 gRPC를 사용하고 있는데, 응답으로 나가는 protobuf message를 정의할 때 아래와 형식을 따르도록 컨벤션을 맞추었습니다.
+포트원에서는 마이크로서비스들 간의 통신에서 gRPC를 사용하고 있는데, 응답으로 나가는 protobuf message를 정의할 때 아래와 같은 형식을 따르도록 컨벤션을 맞추었습니다.
 
 ```proto
 message SomeResponse {
