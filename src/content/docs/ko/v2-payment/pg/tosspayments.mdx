@@ -38,7 +38,6 @@ import Details from "~/components/gitbook/Details.astro";
 
 결제 요청 시에는 `requestPayment` 함수를 호출하고, 빌링키 발급 시에는 `requestIssueBillingKey` 함수를 호출해야합니다.
 `channelKey` 파라미터에 결제 채널 연동 시 입력한 채널 키를 지정하여 토스페이먼츠 연동임을 명시해주세요.
-만약 `channelKey`가 입력되지 않는 경우 `pgProvider` 파라미터에 입력된 값에 따라 결제 및 빌링키 발급 창이 호출됩니다.
 
 토스페이먼츠 기준으로 작성한 예시 코드는 아래와 같습니다.
 

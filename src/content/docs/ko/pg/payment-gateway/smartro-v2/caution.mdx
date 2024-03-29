@@ -202,7 +202,6 @@ IMP.request_pay({
 
 ```jsx {5-13}
 PortOne.requestPayment({
-  pgProvider: "SMARTRO_V2",
   payMethod: "CARD",
   totalAmount: 50000,
   isEscrow: true, // 에스크로 결제
@@ -223,7 +222,6 @@ PortOne.requestPayment({
 
 ```jsx {5-8}
 PortOne.requestPayment({
-  pgProvider: "SMARTRO_V2",
   payMethod: "VIRTUAL_ACCOUNT",
   totalAmount: 50000,
   isEscrow: true, // 에스크로 결제
@@ -264,7 +262,6 @@ IMP.request_pay({
 
 ```jsx {4-10}
 PortOne.requestPayment({
-  pgProvider: "SMARTRO_V2",
   totalAmount: 50000,
   payMethod: "TRANSFER", // 계좌이체 결제
   isEscrow: true, // 에스크로 결제
