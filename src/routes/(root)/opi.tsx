@@ -58,7 +58,7 @@ export default function Docs(props: { children: JSXElement }) {
 
   return (
     <SearchProvider>
-      <div class="max-w-8xl mx-auto flex gap-5 px-10">
+      <div class="flex gap-5">
         <DocsNavMenu lang={params().lang} slug={params().slug} />
         <div class="min-w-0 flex flex-1 justify-center gap-5">
           <Show when={frontmatter()}>
