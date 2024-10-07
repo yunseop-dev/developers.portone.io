@@ -65,11 +65,11 @@ export function SearchButton({ lang }: SearchButtonProps) {
 export const searchIndexKo = lazy(() => fetchSearchIndex("ko"));
 export const searchIndexEn = lazy(() => fetchSearchIndex("en"));
 async function fetchSearchIndex(lang: string): Promise<SearchIndex> {
-  const res = await fetch(`/content-index/opi-${lang}.json`);
+  const res = await fetch(`/content-index/${lang}.json`);
   return JSON.parse((await res.text()).normalize("NFKD")) as SearchIndex;
 }
 
-export type SearchIndex = SearchIndexItem[];
+export type SearchIndex = Record<string, SearchIndexItem[]>;
 export interface SearchIndexItem {
   slug: string;
   title?: string;
@@ -98,7 +98,8 @@ export function SearchScreen(props: SearchScreenProps) {
   const fuse = createMemo(() => {
     const index = searchIndex.latest;
     if (!index) return;
-    const filteredIndex = index
+    const filteredIndex = Object.values(index)
+      .flat()
       .filter((item) => {
         const navMenuSystemVersion =
           props.navMenuSystemVersions[item.slug.replace(/^opi/, "")];
