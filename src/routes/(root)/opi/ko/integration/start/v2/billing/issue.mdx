@@ -51,7 +51,7 @@ if (issueResponse.code != null) {
 // 고객사 서버에 빌링키를 전달합니다
 const response = await fetch(`${MY_SEVER_URL}/billings`, {
   method: "POST",
-  header: { "Content-Type": "application/json" },
+  headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
     billingKey: issueResponse.billingKey,
     // ...
